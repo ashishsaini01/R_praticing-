@@ -5,7 +5,7 @@ library(rvest)
 # Read PBP table from basketball-reference.com
 link2 <- 'https://www.basketball-reference.com/boxscores/pbp/202205260GSW.html'
 
-read_html(link2)
+read_html(link2) # read link using read_html
 
 scrap_data <- 
   read_html(link2) %>%
@@ -19,7 +19,7 @@ colnames(data_new) <- data_new[1, ]          # Convert first row to header
 head(data_new[-1,])                                 # Print updated data frame
 
 
-write.csv(x=data_new[-1,], file="G:\\GLM\\Dallas_vs_gsw_series_game5.csv")
+write.csv(x=data_new[-1,], file="Dallas_vs_gsw_series_game5.csv") # saving the scrapped table
 
 df <- data.frame(scrap_data)
 
